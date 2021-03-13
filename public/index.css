@@ -1,7 +1,45 @@
 * {
-    font-family: cairo;
+    font-family: 'Cairo', sans-serif;
+    font-size: 20px;
 }
 
-h1 {
-    margin-top: 20px;
+.bi:hover {
+    color: green;
+}
+
+.bi {
+    margin-right: 5px;
+}
+
+/* .bi-emoji-angry {
+    color: red;
+}
+
+.bi-emoji-frown {
+    color: rgb(240, 54, 54);
+}
+
+.bi-emoji-smile {
+    color: rgb(12, 182, 12);
+}
+
+.bi-emoji-heart-eyes {
+    color: green;
+} */
+
+.selected {
+    color: green;
+}
+
+.scales {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.container {
+    min-height: 670px;
+}
+
+.spacer {
+    color: #f8f9fa!important;
 }

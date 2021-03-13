@@ -3,75 +3,67 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تأهيل الشبكات</title>
+    <link rel="stylesheet" href="./bootstraprtl.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="bootstraprtl.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <title>إستبيان الرضا الوظيفي</title>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-dark bg-primary">
-        <form class="container-fluid justify-content-start" id="navbar">
-            <button id="addLink" class="btn btn-success me-2" type="button">إضفاة</button>
-            <button id="getLink" class="btn btn-success" type="button">جلب</button>
-        </form>
-    </nav>
-
     <div class="container">
-        <div id="compdata">
-            <h1>بيانات المتقدم</h1>
-            <div class="row">
-                <div class="col-4 py-3">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="type" value="شركة">
-                        <label class="form-check-label" for="inlineRadio1">شركة</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="type" value="إسم عمل">
-                        <label class="form-check-label" for="inlineRadio2">إسم عمل</label>
-                    </div>
-                </div>
-                <div class="col-4 py-3">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="status" value="جديد">
-                        <label class="form-check-label" for="inlineRadio1">جديد</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="status" value="قديم">
-                        <label class="form-check-label" for="inlineRadio2">قديم</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="name" placeholder="name@example.com">
-                <label for="name">الإسم</label>
-            </div>
+        <nav class="navbar navbar-light bg-light mx-auto">
+            <form class="form-inline">
+                <button class="btn btn-success btn-sm" id="rows" type="button">موقف الإدارات</button>
+                <button class="btn btn-success btn-sm" id="results" type="button"> نسب الرضا لكل سؤال</button>
+                <button class="btn btn-success btn-sm" id="suggs" type="button"> المقترحات</button>
+                <a href="http://192.168.2.224:3000" class="btn btn-success btn-sm">عودة للإستبيان</a>
+            </form>
+        </nav>
 
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="phone" placeholder="0912367234 - 0123676128">
-                <label for="phone">الهواتف</label>
-            </div>
+        <div class="jumbotron my-4">
+            <p class="lead text-primary">أخي العامل بالشركة السوادنية لتوزيع الكهرباء</p>
 
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="email" placeholder="example@doamin.com">
-                <label for="email">البريد الإلكتروني</label>
-            </div>
+            <p class="alert alert-primary"> لخدمتك بتميز وتحقيق رضاك الوظيفي نرجو تعبئة هذا الإستبيان بصدق وموضوعية
+                والذي يهدف إلى معرفة رضا
+                العاملين عن عملهم مع العلم أنه سيتم معاملة هذا الإستبيان بشكل سري والغرض منه الداسة الإحصائية ومعرفة
+                النئائج ليتم تقديمها للإدارة العليا لمعالجة نقاط الضعف والإرتقاء بالمورد البشري والذي سوف ينعكس إيجاباً
+                على تحقيق أهداف الشركة إن شاء الله ... وشكراً علي تفهمك وتعاونك.
+                <br />
+                <i class="bi bi-emoji-angry"></i> غير راض -
+                <i class="bi bi-emoji-neutral"></i> محايد -
+                <i class="bi bi-emoji-heart-eyes"></i> راض
+            </p>
+            <hr class="my-4">
 
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="address" placeholder="الخرطوم شارع البلدية">
-                <label for="adress">العنوان</label>
+            <p class="lead">
+            <div id="info" class="row">
+                <input type="text" placeholder="رقم الموظف" id="empid" class="col-2">
+                <span id="empname" class="col-10 text text-success align-middle"></span>
             </div>
-            <!-- <div class="form-floating mb-3"> -->
-            <button type="button" id="save" class="form-control btn btn-success">حفـــــــــــــــــــــــــظ</button>
-            <!-- </div> -->
+            </p>
         </div>
+
+        <div id="questions" class="my-4"></div>
+
     </div>
 
+    <footer class="bg-dark text-center text-white py-4">
+        <div>
+            إعداد الإستبيان: إدارة المـوارد البشرية - قسم تخطيط القوى العاملة
+            <i class="bi bi-heart-fill"></i>
+        </div>
+        <div>
+            برمجة وتصميم: الحسين محمود - مــارس 2021م - مركـز المعلومات
+            <i class="bi bi-heart-fill"></i>
+        </div>
+    </footer>
+
+    <script src="./jquery.js"></script>
+    <script src="./index.min.js"></script>
 </body>
-<script src="jquery.js"></script>
-<script src="index.js"></script>
 
 </html>
